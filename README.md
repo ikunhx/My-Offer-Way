@@ -2,6 +2,12 @@
 
 一个简洁的求职投递记录管理工具，帮助你高效追踪求职进度。
 
+## 界面
+<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/5cd740e9-2ee8-4086-8b23-9bcdbc6a4355" />
+<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/7f02387c-1e60-443e-af73-574851845c2c" />
+<img width="2560" height="1304" alt="image" src="https://github.com/user-attachments/assets/d377bd3d-0c1d-4ac0-9c43-57749048fe42" />
+
+
 ## 功能特性
 
 ### 投递记录管理
