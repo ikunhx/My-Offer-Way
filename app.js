@@ -1,4 +1,3 @@
-const DATA_FILE = 'records.json';
 const STORAGE_KEY = 'offer-road-data';
 
 let records = [];
@@ -18,67 +17,28 @@ const statusMap = {
     '收到offer': 'offer'
 };
 
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadData();
-    await loadSettings();
+document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+    loadSettings();
     renderRecords();
     updateStats();
     setupEventListeners();
 });
 
-async function loadData() {
-    try {
-        const response = await fetch(DATA_FILE);
-        if (response.ok) {
-            records = await response.json();
-        } else {
-            records = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        }
-    } catch (error) {
-        records = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    }
+function loadData() {
+    records = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 }
 
-async function saveData() {
-    try {
-        const response = await fetch(DATA_FILE, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(records, null, 2)
-        });
-        if (!response.ok) throw new Error('Save failed');
-    } catch (error) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
-    }
+function saveData() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
 }
 
-async function loadSettings() {
-    try {
-        const response = await fetch('settings.json');
-        if (response.ok) {
-            settings = await response.json();
-        } else {
-            settings = JSON.parse(localStorage.getItem('offer-road-settings') || '{"defaultPosition":""}');
-        }
-    } catch (error) {
-        settings = JSON.parse(localStorage.getItem('offer-road-settings') || '{"defaultPosition":""}');
-    }
+function loadSettings() {
+    settings = JSON.parse(localStorage.getItem('offer-road-settings') || '{"defaultPosition":""}');
 }
 
-async function saveSettings() {
-    try {
-        await fetch('settings.json', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(settings, null, 2)
-        });
-    } catch (error) {
-        localStorage.setItem('offer-road-settings', JSON.stringify(settings));
-    }
+function saveSettings() {
+    localStorage.setItem('offer-road-settings', JSON.stringify(settings));
 }
 
 function setupEventListeners() {
