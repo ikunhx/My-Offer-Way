@@ -54,15 +54,13 @@ OFFER之路/
 ├── index.html          # 主页面
 ├── style.css           # 样式文件
 ├── app.js              # 核心逻辑
-├── records.json        # 投递记录数据（自动生成）
-├── settings.json       # 设置数据（自动生成）
 └── README.md           # 项目说明
 ```
 
 ## 数据存储
 
-- 投递记录保存在 `records.json` 文件中
-- 设置信息保存在 `settings.json` 文件中
+- 投递记录保存在 localStorage的offer-road-data中
+- 设置信息保存在 localStorage的offer-road-settings中
 - 数据自动保存，无需手动操作
 
 ## 技术栈
