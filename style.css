@@ -1,27 +1,27 @@
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #64748b;
-    --background: #0f172a;
-    --surface: #1e293b;
-    --surface-hover: #334155;
-    --border-color: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --primary-color: #4f46e5;
+    --primary-dark: #4338ca;
+    --secondary-color: #6b7280;
+    --background: #f0f4ff;
+    --surface: #ffffff;
+    --surface-hover: #f3f6fc;
+    --border-color: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
     
-    --status-unapplied: #64748b;
+    --status-unapplied: #94a3b8;
     --status-applied: #2563eb;
     --status-testing: #f59e0b;
-    --status-interviewing: #8b5cf6;
+    --status-interviewing: #d946ef;
     --status-rejected: #ef4444;
-    --status-waiting: #06b6d4;
-    --status-offer: #22c55e;
+    --status-waiting: #0ea5e9;
+    --status-offer: #059669;
 
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
-    --radius: 8px;
-    --radius-sm: 4px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --radius-sm: 6px;
 }
 
 * {
@@ -233,32 +233,32 @@ body {
 }
 
 .records-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
 
 .record-card {
-    background-color: var(--surface);
     border-radius: var(--radius);
     padding: 16px;
-    border-left: 4px solid var(--border-color);
     transition: all 0.2s ease;
     position: relative;
 }
+
+.record-card.status-unapplied { background-color: rgba(148, 163, 184, 0.1); }
+.record-card.status-applied { background-color: rgba(37, 99, 235, 0.08); }
+.record-card.status-testing { background-color: rgba(245, 158, 11, 0.08); }
+.record-card.status-interviewing { background-color: rgba(217, 70, 239, 0.08); }
+.record-card.status-rejected { background-color: rgba(239, 68, 68, 0.08); }
+.record-card.status-waiting { background-color: rgba(14, 165, 233, 0.08); }
+.record-card.status-offer { background-color: rgba(5, 150, 105, 0.08); }
 
 .record-card:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow);
 }
 
-.record-card.status-unapplied { border-left-color: var(--status-unapplied); }
-.record-card.status-applied { border-left-color: var(--status-applied); }
-.record-card.status-testing { border-left-color: var(--status-testing); }
-.record-card.status-interviewing { border-left-color: var(--status-interviewing); }
-.record-card.status-rejected { border-left-color: var(--status-rejected); }
-.record-card.status-waiting { border-left-color: var(--status-waiting); }
-.record-card.status-offer { border-left-color: var(--status-offer); }
+
 
 .record-header {
     display: flex;
@@ -322,13 +322,13 @@ body {
     text-transform: capitalize;
 }
 
-.status-unapplied .record-status { background-color: rgba(100, 116, 139, 0.2); color: var(--status-unapplied); }
-.status-applied .record-status { background-color: rgba(37, 99, 235, 0.2); color: var(--status-applied); }
-.status-testing .record-status { background-color: rgba(245, 158, 11, 0.2); color: var(--status-testing); }
-.status-interviewing .record-status { background-color: rgba(139, 92, 246, 0.2); color: var(--status-interviewing); }
-.status-rejected .record-status { background-color: rgba(239, 68, 68, 0.2); color: var(--status-rejected); }
-.status-waiting .record-status { background-color: rgba(6, 182, 212, 0.2); color: var(--status-waiting); }
-.status-offer .record-status { background-color: rgba(34, 197, 94, 0.2); color: var(--status-offer); }
+.status-unapplied .record-status { background-color: rgba(148, 163, 184, 0.12); color: var(--status-unapplied); }
+.status-applied .record-status { background-color: rgba(37, 99, 235, 0.12); color: var(--status-applied); }
+.status-testing .record-status { background-color: rgba(245, 158, 11, 0.12); color: var(--status-testing); }
+.status-interviewing .record-status { background-color: rgba(217, 70, 239, 0.12); color: var(--status-interviewing); }
+.status-rejected .record-status { background-color: rgba(239, 68, 68, 0.12); color: var(--status-rejected); }
+.status-waiting .record-status { background-color: rgba(14, 165, 233, 0.12); color: var(--status-waiting); }
+.status-offer .record-status { background-color: rgba(5, 150, 105, 0.12); color: var(--status-offer); }
 
 .record-link {
     color: var(--primary-color);
@@ -567,9 +567,13 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .records-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .record-header {
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
     }
 
     .record-actions {
