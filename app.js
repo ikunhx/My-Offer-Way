@@ -390,6 +390,7 @@ function updateStats() {
     document.getElementById('testingCount').textContent = records.filter(r => r.status === '笔试中').length;
     document.getElementById('interviewCount').textContent = records.filter(r => r.status === '面试中').length;
     document.getElementById('rejectedCount').textContent = records.filter(r => r.status === '挂了').length;
+    document.getElementById('waitingCount').textContent = records.filter(r => r.status === '等offer').length;
     document.getElementById('offerCount').textContent = records.filter(r => r.status === '收到offer').length;
 }
 
