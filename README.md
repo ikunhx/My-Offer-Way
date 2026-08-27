@@ -2,7 +2,7 @@
 
 一个简洁的求职投递记录管理工具，帮助你高效追踪求职进度。
 ## 页面
-<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/6b962f6a-7cbf-4f16-a959-bfdebbe2c89d" />
+<img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/790625b1-1e1b-42a3-b998-93d0407c6ba7" />
 <img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/f67c2fac-3297-4594-ae37-f5c63d62d178" />
 <img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/516d35f9-3149-49c8-b930-814d5d6976e3" />
 <img width="2549" height="1242" alt="image" src="https://github.com/user-attachments/assets/0cdf6061-4950-4051-badc-1056d8fcb3f6" />
