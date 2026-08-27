@@ -138,7 +138,7 @@ body {
 
 .stats-bar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     margin-bottom: 24px;
 }
@@ -167,7 +167,40 @@ body {
 }
 
 .filter-bar {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.filter-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    background-color: var(--surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    font-size: 14px;
+    outline: none;
+    min-width: 200px;
+    transition: border-color 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-input:hover {
+    border-color: var(--text-muted);
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
 }
 
 .filter-select {
@@ -531,7 +564,7 @@ body {
     }
 
     .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .record-header {

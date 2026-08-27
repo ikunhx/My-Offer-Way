@@ -51,12 +51,16 @@
                 <span class="stat-label">总投递</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value" id="pendingCount">0</span>
-                <span class="stat-label">待投递</span>
+                <span class="stat-value" id="testingCount">0</span>
+                <span class="stat-label">笔试中</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value" id="interviewCount">0</span>
                 <span class="stat-label">面试中</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="rejectedCount">0</span>
+                <span class="stat-label">挂了</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value" id="offerCount">0</span>
@@ -65,16 +69,19 @@
         </div>
 
         <div class="filter-bar">
-            <select id="statusFilter" class="filter-select">
-                <option value="all">全部状态</option>
-                <option value="未投递">未投递</option>
-                <option value="已投递">已投递</option>
-                <option value="笔试中">笔试中</option>
-                <option value="面试中">面试中</option>
-                <option value="挂了">挂了</option>
-                <option value="等offer">等offer</option>
-                <option value="收到offer">收到offer</option>
-            </select>
+            <div class="filter-left">
+                <select id="statusFilter" class="filter-select">
+                    <option value="all">全部状态</option>
+                    <option value="未投递">未投递</option>
+                    <option value="已投递">已投递</option>
+                    <option value="笔试中">笔试中</option>
+                    <option value="面试中">面试中</option>
+                    <option value="挂了">挂了</option>
+                    <option value="等offer">等offer</option>
+                    <option value="收到offer">收到offer</option>
+                </select>
+                <input type="text" id="searchInput" class="search-input" placeholder="搜索公司名...">
+            </div>
         </div>
 
         <main class="main-content">

@@ -51,6 +51,7 @@ function setupEventListeners() {
     document.getElementById('settingsCancel').addEventListener('click', closeSettingsModal);
     document.getElementById('settingsForm').addEventListener('submit', handleSettingsSubmit);
     document.getElementById('statusFilter').addEventListener('change', renderRecords);
+    document.getElementById('searchInput').addEventListener('input', renderRecords);
     document.getElementById('confirmClose').addEventListener('click', closeConfirmModal);
     document.getElementById('confirmCancel').addEventListener('click', closeConfirmModal);
     document.getElementById('confirmDelete').addEventListener('click', confirmDelete);
@@ -150,10 +151,17 @@ function handleSettingsSubmit(e) {
 function renderRecords() {
     const list = document.getElementById('recordsList');
     const filter = document.getElementById('statusFilter').value;
+    const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
 
-    const filteredRecords = filter === 'all' 
+    let filteredRecords = filter === 'all' 
         ? records 
         : records.filter(r => r.status === filter);
+
+    if (searchTerm) {
+        filteredRecords = filteredRecords.filter(r => 
+            r.company.toLowerCase().includes(searchTerm)
+        );
+    }
 
     if (filteredRecords.length === 0) {
         list.innerHTML = `
@@ -379,8 +387,9 @@ function confirmDelete() {
 
 function updateStats() {
     document.getElementById('totalCount').textContent = records.length;
-    document.getElementById('pendingCount').textContent = records.filter(r => r.status === '未投递').length;
+    document.getElementById('testingCount').textContent = records.filter(r => r.status === '笔试中').length;
     document.getElementById('interviewCount').textContent = records.filter(r => r.status === '面试中').length;
+    document.getElementById('rejectedCount').textContent = records.filter(r => r.status === '挂了').length;
     document.getElementById('offerCount').textContent = records.filter(r => r.status === '收到offer').length;
 }
 
