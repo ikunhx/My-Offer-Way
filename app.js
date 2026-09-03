@@ -159,7 +159,8 @@ function renderRecords() {
 
     if (searchTerm) {
         filteredRecords = filteredRecords.filter(r => 
-            r.company.toLowerCase().includes(searchTerm)
+            r.company.toLowerCase().includes(searchTerm) ||
+            (r.city && r.city.toLowerCase().includes(searchTerm))
         );
     }
 
